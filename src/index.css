@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bs-font-sans-serif: 'Outfit', system-ui, -apple-system, sans-serif;
+  --bs-primary: #0D8ABC;
+  --bs-primary-rgb: 13, 138, 188;
+}
+
+body {
+  font-family: var(--bs-font-sans-serif);
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Custom Overrides for Premium feel */
+.dashboard-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.profile-cover {
+  height: 100px;
+  background: linear-gradient(135deg, #0D8ABC 0%, #667eea 100%);
+  border-radius: 1rem 1rem 0 0;
+  margin-bottom: -50px;
+}
+
+.btn {
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  background-color: #0b729c;
+  border-color: #0b729c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 138, 188, 0.3);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #0D8ABC 0%, #667eea 100%);
+  color: white;
+  border: none;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #667eea 0%, #0D8ABC 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Card Hover Effects */
+.job-card-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.job-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.15) !important;
+  border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+.auth-card {
+  border-top: 5px solid var(--bs-primary) !important;
+}
+
+/* Animations */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-white:hover {
+  color: white !important;
+}
+
+/* Helpers */
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+/* Form inputs styling */
+.form-control:focus, .form-select:focus {
+  border-color: rgba(13, 138, 188, 0.5);
+  box-shadow: 0 0 0 0.25rem rgba(13, 138, 188, 0.15);
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+}
