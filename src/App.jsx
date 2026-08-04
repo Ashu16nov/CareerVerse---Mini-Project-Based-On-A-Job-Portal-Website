@@ -14,7 +14,26 @@ function App() {
   const [appliedJobs, setAppliedJobs] = useState([]);
 
   const [registeredUsers, setRegisteredUsers] = useState([
-    { fullName: 'Mr Ashu', email: 'ashu@example.com', password: 'password123' }
+    { 
+      fullName: 'AASHUTOSH', 
+      email: 'aashu16nov@gmail.com', 
+      password: 'password123',
+      jobTitle: '',
+      department: '',
+      phone: '',
+      address: '',
+      linkedin: '',
+      github: '',
+      careerObjective: '',
+      education: [],
+      experience: [],
+      skills: '',
+      softSkills: '',
+      achievements: '',
+      projects: [],
+      certificates: [],
+      hobbies: ''
+    }
   ]);
 
   const handleRegister = (newUser) => {

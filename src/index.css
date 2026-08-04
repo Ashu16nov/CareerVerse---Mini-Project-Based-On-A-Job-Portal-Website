@@ -100,3 +100,51 @@ body {
 .input-group-text {
   background-color: #f8f9fa;
 }
+
+/* Print CSS for Resume */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resume-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible !important;
+  }
+  .resume-modal * {
+    visibility: hidden;
+  }
+  .resume-document, .resume-document * {
+    visibility: visible;
+  }
+  .resume-document {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px !important;
+  }
+  /* Ensure colors and backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  /* Hide print buttons */
+  .d-print-none {
+    display: none !important;
+  }
+  
+  /* Prevent sections from breaking across pages if possible */
+  .resume-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  @page {
+    margin: 1cm;
+  }
+}
+

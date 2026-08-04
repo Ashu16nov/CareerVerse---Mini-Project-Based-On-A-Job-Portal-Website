@@ -8,6 +8,7 @@ import JobCard from '../components/JobCard';
 import { jobs as initialJobs } from '../data/jobs';
 import { useNavigate } from 'react-router-dom';
 import EditProfileModal from '../components/EditProfileModal';
+import ResumeModal from '../components/ResumeModal';
 
 const Dashboard = ({ user, isAuthenticated, onLogout, appliedJobs, onApply, onUpdateUser }) => {
   const navigate = useNavigate();
@@ -100,7 +101,7 @@ const Dashboard = ({ user, isAuthenticated, onLogout, appliedJobs, onApply, onUp
             
             {/* Sidebar: Profile & Filters */}
             <div className="col-lg-4 col-xl-3">
-              <Profile user={user} appliedJobs={appliedJobs} />
+              <Profile user={user} appliedJobs={appliedJobs} onUpdateUser={onUpdateUser} />
               <div className="d-none d-lg-block">
                 <Filter filterOptions={filterOptions} onFilterChange={handleFilterChange} />
               </div>
@@ -158,6 +159,7 @@ const Dashboard = ({ user, isAuthenticated, onLogout, appliedJobs, onApply, onUp
       
       <DashboardFooter />
       <EditProfileModal user={user} onUpdateUser={onUpdateUser} />
+      <ResumeModal user={user} />
     </div>
   );
 };
