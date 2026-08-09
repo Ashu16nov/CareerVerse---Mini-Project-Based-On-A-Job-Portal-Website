@@ -20,7 +20,7 @@ const ResumeModal = ({ user }) => {
   const renderList = (text) => {
     if (!text) return null;
     return (
-      <ul className="mb-0" style={{ paddingLeft: '20px' }}>
+      <ul className="mb-0" style={{ paddingLeft: '20px', listStyleType: 'disc' }}>
         {text.split('\n').filter(item => item.trim() !== '').map((item, index) => (
           <li key={index} style={{ marginBottom: '4px' }}>
             {item.includes(':') ? (
@@ -62,7 +62,7 @@ const ResumeModal = ({ user }) => {
               }}
             >
               {/* Header Section */}
-              <div className="text-center mb-3 resume-section">
+              <div className="text-start mb-2 resume-section">
                 <h1 className="fw-bold text-uppercase mb-1" style={{ fontSize: '24pt', letterSpacing: '1px' }}>
                   {user.fullName || 'YOUR NAME'}
                 </h1>
@@ -80,17 +80,19 @@ const ResumeModal = ({ user }) => {
 
               {/* Career Objective Section */}
               {user.careerObjective && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Career Objective</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Career Objective</h5>
                   <div style={{ textAlign: 'justify' }}>{user.careerObjective}</div>
                 </div>
               )}
 
               {/* Education Section */}
               {user.education && user.education.length > 0 && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Education</h5>
-                  <ul className="mb-0" style={{ paddingLeft: '20px' }}>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Education</h5>
+                  <ul className="mb-0" style={{ paddingLeft: '20px', listStyleType: 'disc' }}>
                     {user.education.map((edu, index) => (
                       <li key={index} style={{ marginBottom: '4px' }}>
                         <strong>{edu.degree}</strong> {edu.institution && ` ${edu.institution}`} {edu.year && ` | ${edu.year}`} {edu.grade && ` | ${edu.grade}`}
@@ -102,8 +104,9 @@ const ResumeModal = ({ user }) => {
 
               {/* Experience Section - If added */}
               {user.experience && user.experience.length > 0 && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Experience</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Experience</h5>
                   {user.experience.map((exp, index) => (
                     <div key={index} className="mb-2">
                       <div className="fw-bold">{exp.title} | {exp.company} | {exp.duration}</div>
@@ -115,8 +118,9 @@ const ResumeModal = ({ user }) => {
 
               {/* Projects Section */}
               {user.projects && user.projects.length > 0 && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Academic Projects</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Academic Projects</h5>
                   {user.projects.map((proj, index) => (
                     <div key={index} className="mb-2">
                       <div className="fw-bold">
@@ -130,33 +134,37 @@ const ResumeModal = ({ user }) => {
 
               {/* Technical Skills Section */}
               {user.skills && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Technical Skills</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Technical Skills</h5>
                   {renderList(user.skills)}
                 </div>
               )}
 
               {/* Soft Skills Section */}
               {user.softSkills && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Soft Skills</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Soft Skills</h5>
                   {renderList(user.softSkills)}
                 </div>
               )}
 
               {/* Achievements Section */}
               {user.achievements && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Achievements</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Achievements</h5>
                   {renderList(user.achievements)}
                 </div>
               )}
 
               {/* Certificates Section */}
               {user.certificates && user.certificates.length > 0 && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Certificates</h5>
-                  <ul className="mb-0" style={{ paddingLeft: '20px' }}>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Certificates</h5>
+                  <ul className="mb-0" style={{ paddingLeft: '20px', listStyleType: 'disc' }}>
                     {user.certificates.map((cert, index) => (
                       <li key={index} style={{ marginBottom: '4px' }}>
                         {cert.name} {cert.issuer && `- ${cert.issuer}`} {cert.year && `(${cert.year})`}
@@ -168,8 +176,9 @@ const ResumeModal = ({ user }) => {
 
               {/* Hobbies Section */}
               {user.hobbies && (
-                <div className="mb-3 resume-section">
-                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt', borderBottom: '1.5px solid #000', paddingBottom: '2px' }}>Hobbies</h5>
+                <div className="mb-2 resume-section">
+                  <hr style={{ borderTop: '1.5px solid #000', margin: '10px 0 6px 0', opacity: 1 }} />
+                  <h5 className="fw-bold mb-1" style={{ fontSize: '13pt' }}>Hobbies</h5>
                   {renderList(user.hobbies)}
                 </div>
               )}

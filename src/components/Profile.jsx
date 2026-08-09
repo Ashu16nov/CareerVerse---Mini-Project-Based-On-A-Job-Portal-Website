@@ -9,25 +9,33 @@ const Profile = ({ user, appliedJobs, onUpdateUser }) => {
         resumeName: file.name,
         fullName: 'AASHUTOSH',
         email: 'aashu16nov@gmail.com',
-        jobTitle: 'UI/UX Designer',
-        department: 'Frontend',
+        jobTitle: '',
+        department: '',
         phone: '+91 8102561056',
-        address: 'Vill. + P.O.- Kartahan Buzurg, Dist.- Vaishali, Bihar - 844119',
+        address: 'C/O Ramswaroop Prasad Singh, Vill. + P.O.- Kartahan Buzurg, Dist.- Vaishali, Bihar - 844119',
         linkedin: 'linkedin.com/in/aashutosh-singh-mca',
         github: 'github.com/Ashu16nov',
-        careerObjective: 'MCA student with a strong foundation in Data Structures and Algorithms, specializing in Web Development.',
-        skills: 'Programming Language: Python, JavaScript, C++, SQL.\nWeb Technologies: HTML, CSS, React, Node.js, Bootstrap, TailwindCSS.\nTools: VS Code, Git, GitHub.',
-        softSkills: 'Leadership\nProblem Solving\nAdaptability\nTime Management',
+        careerObjective: 'MCA student with a strong foundation in Data Structures and Algorithms, Object-Oriented Programming, Database Management Systems, and full-stack web development. Proficient in JavaScript, Python, C++, SQL, React.js, Node.js, Express.js, and MongoDB. Hands-on experience developing MERN stack applications, RESTful APIs, authentication systems, role-based access control, database-driven applications, and responsive web interfaces. Strong problem-solving, debugging, analytical, communication, and teamwork skills with a passion for developing scalable and reliable software solutions.',
+        skills: 'Programming Language: Python, JavaScript, C++, SQL.\nWeb Technologies: HTML5, CSS3, Bootstrap, React.js, Node.js, Express, APIs.\nDatabases: MySQL, MongoDB.\nAI & Tools: Prompt Engineering, VS code, Git, GitHub, Figma, Canva, MS Office Suite.',
+        softSkills: 'Strong analytical and problem-solving ability.\nEffective verbal and written communication skills (Hindi, English).\nAbility to work in fast-paced and deadline-driven environments.\nQuick learner with strong adaptability to new technologies.',
         achievements: 'Winner: Ink & Pixel - Departmental Poster Making Competition, Chandigarh University (2025).\nCo-Curricular: Student Coordinator, GenesisX AI Fest, Chandigarh University (2026)',
         education: [
            { degree: 'Master of Computer Application (MCA)', institution: 'Chandigarh University, Mohali', year: '2025-2027', grade: 'Current CGPA: 7.63/10.0' },
            { degree: 'Bachelors of Computer Application (BCA)', institution: 'Cimage Professional College, Patna', year: '2021-2024', grade: 'CGPA: 8.0/10.0' },
-           { degree: 'Intermediate (Class XII)', institution: 'R.N. College Hajipur', year: '2019-2021', grade: 'Percentage: 79%' }
+           { degree: 'Intermediate (Class XII)', institution: 'Bihar School Examination Board', year: '2019-2021', grade: 'Percentage: 73%' },
+           { degree: 'Matriculation (Class X)', institution: 'Central Board of Secondary Education', year: '2019', grade: 'Percentage: 76.2%' }
         ],
         experience: [],
         projects: [
-           { name: 'JobPortal Platform', techStack: 'React, Node, Bootstrap', date: '2026', description: 'A comprehensive job portal platform with dynamic resume builder.' }
-        ]
+           { name: 'Online Complaints Management System', techStack: 'MERN Stack - Full Stack Web Application', date: 'April 2026', description: 'Developed a MERN-based complaint management system with secure authentication.\nImplemented real-time complaint tracking and role-based admin dashboard.\nIntegrated feedback, contact modules, and REST APIs.' },
+           { name: 'Facebook App UI Clone', techStack: 'UI/UX Design (Figma)', date: 'Jan 2026', description: 'Designed a high-fidelity Facebook app clone in Figma using Auto Layout, Components, Variants, and Prototyping.\nDeveloped responsive multi-screen UI with pixel-perfect alignment and modern UX principles.' }
+        ],
+        certificates: [
+           { name: 'AI for Data Science', issuer: 'Infosys Springboard', year: '2026' },
+           { name: 'Artificial Intelligence', issuer: 'Infosys Springboard', year: '2025' },
+           { name: 'Cloud Computing', issuer: 'Cimage Professional College', year: '2024' }
+        ],
+        hobbies: 'Full-Stack Development\nAI-Powered Applications\nUI/UX Design (Figma)\nPhotography'
       };
       
       // Auto-fill the profile with parsed data
@@ -120,7 +128,25 @@ const Profile = ({ user, appliedJobs, onUpdateUser }) => {
                  <button 
                    type="button"
                    className="btn btn-link text-danger p-0 small fw-semibold text-decoration-none m-0" 
-                   onClick={() => onUpdateUser({ ...user, resumeName: '' })}
+                   onClick={() => onUpdateUser({ 
+                     ...user, 
+                     resumeName: '',
+                     jobTitle: '',
+                     department: '',
+                     phone: '',
+                     address: '',
+                     linkedin: '',
+                     github: '',
+                     careerObjective: '',
+                     skills: '',
+                     softSkills: '',
+                     achievements: '',
+                     education: [],
+                     experience: [],
+                     projects: [],
+                     certificates: [],
+                     hobbies: ''
+                   })}
                  >
                    <i className="bi bi-trash me-1"></i>Remove
                  </button>
